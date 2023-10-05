@@ -65,5 +65,3 @@ useAppStore.persist.onFinishHydration((state) => {
     state.setLoaded(true);
   }
 });
-
-useAppStore.getState().setLoaded(true);

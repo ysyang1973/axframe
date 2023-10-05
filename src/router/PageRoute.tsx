@@ -9,7 +9,6 @@ import { useAppMenu } from "./useAppMenu";
 const FrameDefault = React.lazy(() => import("pageFrame/FrameDefault"));
 const FrameProgram = React.lazy(() => import("pageFrame/FrameProgram"));
 
-const IconWriter = React.lazy(() => import("@icons/App"));
 const ExampleList = React.lazy(() => import("@core/pages/LIST/App"));
 const ExampleForm = React.lazy(() => import("@core/pages/FORM/App"));
 const ExampleDetail = React.lazy(() => import("@core/pages/DETAIL/App"));
@@ -81,7 +80,6 @@ function PageRoute() {
       >
         <Route path={ROUTES.SIGN_IN.path} element={<SignIn />} />
       </Route>
-      {import.meta.env.MODE === "alpha" && <Route path={"/@icons"} element={<IconWriter />} />}
       <Route path={"*"} element={<Error404 />} />
     </Routes>
   );

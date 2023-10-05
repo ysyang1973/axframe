@@ -11,6 +11,7 @@ interface Props {
 
 function RequireAuth({ children }: Props) {
   const loaded = useUserStore((s) => s.loaded);
+  const me = useUserStore((s) => s.me);
   const accessibleMenus = useUserStore((s) => s.authorityList);
   const { APP_MENUS } = useAppMenu();
   const location = useLocation();
@@ -24,7 +25,7 @@ function RequireAuth({ children }: Props) {
     return <Navigate to={ROUTES.HOME.path} state={{ from: location }} replace />;
   }
 
-  if (!getAppData()?.authorization) {
+  if (loaded && !me) {
     return <Navigate to={ROUTES.SIGN_IN.path} state={{ from: location }} replace />;
   }
 

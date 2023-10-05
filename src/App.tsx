@@ -10,18 +10,8 @@ import { Drawers, Modals, StoreSpinner } from "@core/components";
 import "styles/index.less";
 import "@core/utils/console";
 import "./customizeAntd";
-
-if (import.meta.hot) {
-  // HMR code
-  console.log("HMR Enabled");
-
-  import.meta.hot.accept((newModule) => {
-    if (newModule) {
-      // newModule is undefined when SyntaxError happened
-      console.log("updated: count is now ", newModule.count);
-    }
-  });
-}
+import {getAppData} from "./@core/utils/store";
+import {setApiHeader} from "./services/apiWrapper.ts";
 
 const App: React.FC = () => {
   const { switcher, themes } = useThemeSwitcher();
@@ -50,6 +40,11 @@ const App: React.FC = () => {
     handleGetWindowSize();
     document.body.style.overscrollBehavior = "contain"; // prevent history move by wheel event
     window.addEventListener("resize", handleGetWindowSize);
+
+    const appData = getAppData();
+    if (appData) {
+      setApiHeader(appData.authorization);
+    }
 
     return () => {
       window.removeEventListener("resize", handleGetWindowSize);

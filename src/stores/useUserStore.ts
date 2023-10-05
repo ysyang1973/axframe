@@ -97,6 +97,4 @@ useUserStore.persist.onFinishHydration((state) => {
   }
 });
 
-setTimeout(async () => {
-  useUserStore.getState().setLoaded(true);
-}, 600);
+window["userStore"] = useUserStore;

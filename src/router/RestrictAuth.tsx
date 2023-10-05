@@ -10,8 +10,9 @@ interface Props {
 
 function RestrictAuth({ children }: Props) {
   const location = useLocation();
+  const me = useUserStore((s) => s.me);
 
-  if (getAppData()?.authorization) {
+  if (me) {
     return <Navigate to={ROUTES.HOME.path} state={{ from: location }} replace />;
   }
 

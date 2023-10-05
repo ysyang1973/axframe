@@ -97,7 +97,7 @@ function App({}: Props) {
       form.getFieldInstance("userId").focus();
     }
 
-    const isTest = sessionStorage.getItem("isApiTest");
+    const isTest = localStorage.getItem("isApiTest");
     setIsApiTest(isTest === "T");
   }, [form]);
 
@@ -193,7 +193,7 @@ function App({}: Props) {
                   <Switch
                     checked={isApiTest}
                     onChange={(checked) => {
-                      sessionStorage.setItem("isApiTest", checked ? "T" : "F");
+                      localStorage.setItem("isApiTest", checked ? "T" : "F");
                       window.location.reload();
                     }}
                   />
