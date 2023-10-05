@@ -1,0 +1,41 @@
+@import "ant-popover";
+@import "ant-dropdown";
+@import "ant-form";
+@import "ant-modal";
+@import "ant-btn";
+
+@import "@axframe/contextmenu/dist/style";
+
+.rf-contextmenu {
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+  font-size: 12px;
+
+  [data-ctx-item] {
+    padding: 6px 5px;
+  }
+
+  svg {
+    width: 0.75em;
+    height: 0.75em;
+  }
+}
+
+[data-rf-contextmenu-container="context-menu"] {
+  .rf-contextmenu {
+    z-index: 100;
+
+    [data-ctx-item] {
+      padding: 6px 5px;
+    }
+
+    svg {
+      width: 0.8em;
+      height: 0.8em;
+    }
+  }
+}
+
+input[readonly] {
+  cursor: not-allowed;
+}
