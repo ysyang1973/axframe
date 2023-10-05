@@ -97,6 +97,6 @@ useUserStore.persist.onFinishHydration((state) => {
   }
 });
 
-setTimeout(() => {
+setTimeout(async () => {
   useUserStore.getState().setLoaded(true);
 }, 600);
