@@ -3,7 +3,7 @@ import { User, UserService } from "services";
 import { PROGRAM_TYPES } from "router";
 import { usePageTabStore } from "../@core/stores/usePageTabStore";
 import { setApiHeader } from "../services/apiWrapper";
-import { clearAppData, getAppData, setAppData, updateAppData } from "../@core/utils/store";
+import { clearAppData, getAppData } from "../@core/utils/store";
 import { useAppStore } from "stores";
 
 export interface UserMenuItem {
