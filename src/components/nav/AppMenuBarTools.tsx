@@ -2,12 +2,13 @@ import styled from "@emotion/styled";
 import React from "react";
 import { useUserStore } from "stores";
 import { SMixinFlexRow } from "@core/styles/emotion";
-import { useDialog, useI18n } from "@core/hooks";
+import { useI18n } from "@core/hooks";
 import { User } from "services";
 import { IconLogout, IconUser } from "../icons";
 import { Dropdown } from "antd";
 import UserInfoDropdown from "./UserInfoDropdown";
-import { IconText } from "../../@core/components/common";
+import { IconText } from "@core/components/common";
+import { errorHandling } from "utils";
 
 interface StyleProps {
   sideMenuOpened?: boolean;
@@ -21,7 +22,6 @@ function AppMenuBarTools({}: Props) {
   const [signOutSpinning, setSignOutSpinning] = React.useState(false);
   const me = useUserStore((s) => s.me);
   const signOut = useUserStore((s) => s.signOut);
-  const { errorDialog } = useDialog();
   const { t } = useI18n();
   const { userNm } = me ?? {};
 
@@ -30,11 +30,11 @@ function AppMenuBarTools({}: Props) {
     try {
       await signOut();
     } catch (err) {
-      await errorDialog(err);
+      await errorHandling(err);
     } finally {
       setSignOutSpinning(false);
     }
-  }, [errorDialog, setSignOutSpinning, signOut]);
+  }, [setSignOutSpinning, signOut]);
 
   return (
     <Container>

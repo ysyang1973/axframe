@@ -5,7 +5,7 @@ import { Button, Checkbox, Divider, Form, Input, Space, Switch, Tour } from "ant
 
 import { AXFIArrowLogIn, AXFIMoon, AXFISun } from "@axframe/icon";
 import { SMixinFlexColumn, SMixinFlexRow } from "@core/styles/emotion";
-import { useDialog, useDidMountEffect, useI18n, useSpinning } from "hooks";
+import { useDidMountEffect, useI18n, useSpinning } from "hooks";
 import { getTrimNonEmptyRegExp } from "@core/utils/formPatterns/getTrimNonEmptyRegExp";
 import { UserService } from "services";
 import { useAppStore, useUserStore } from "stores";
@@ -13,6 +13,7 @@ import { LangSelector } from "components/LangSelector";
 import { IconAXFrameOpened } from "components/icons";
 import { IconText } from "@core/components/common";
 import React from "react";
+import { errorHandling } from "../../utils";
 
 interface Props {
   onSignIn?: (values: SignInFormItem) => Promise<void>;
@@ -28,7 +29,6 @@ function App({}: Props) {
   const setMe = useUserStore((s) => s.setMe);
   const { t } = useI18n();
   const { spinning, setSpinning } = useSpinning<{ signIn: boolean }>();
-  const { errorDialog } = useDialog();
   const [open, setOpen] = React.useState(false);
   const theme = useAppStore((s) => s.theme);
   const setTheme = useAppStore((s) => s.setTheme);
@@ -76,12 +76,12 @@ function App({}: Props) {
         });
         await setMe(rs);
       } catch (err) {
-        await errorDialog(err);
+        await errorHandling(err);
       } finally {
         setSpinning({ signIn: false });
       }
     },
-    [errorDialog, setMe, setSpinning],
+    [setMe, setSpinning],
   );
 
   React.useEffect(() => {

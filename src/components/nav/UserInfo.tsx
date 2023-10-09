@@ -7,8 +7,8 @@ import { AXFIMoreVertical } from "@axframe/icon";
 import { useAppStore, useUserStore } from "stores";
 import { SMixinEllipsis, SMixinFlexRow } from "@core/styles/emotion";
 import UserInfoDropdown from "./UserInfoDropdown";
-import { useDialog } from "@core/hooks";
 import { User } from "services";
+import { errorHandling } from "../../utils";
 
 interface StyleProps {
   sideMenuOpened?: boolean;
@@ -22,7 +22,6 @@ function UserInfo({}: Props) {
   const sideMenuOpened = useAppStore((s) => s.sideMenuOpened);
   const me = useUserStore((s) => s.me);
   const signOut = useUserStore((s) => s.signOut);
-  const { errorDialog } = useDialog();
 
   const { userNm, email } = me ?? {};
 
@@ -30,9 +29,9 @@ function UserInfo({}: Props) {
     try {
       await signOut();
     } catch (err) {
-      await errorDialog(err);
+      await errorHandling(err);
     }
-  }, [errorDialog, signOut]);
+  }, [signOut]);
 
   return (
     <UserInfoContainer sideMenuOpened={sideMenuOpened}>

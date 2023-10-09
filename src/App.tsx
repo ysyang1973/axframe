@@ -10,8 +10,8 @@ import { Drawers, Modals, StoreSpinner } from "@core/components";
 import "styles/index.less";
 import "@core/utils/console";
 import "./customizeAntd";
-import {getAppData} from "./@core/utils/store";
-import {setApiHeader} from "./services/apiWrapper.ts";
+import { getAppData } from "./@core/utils/store";
+import { setApiHeader } from "./services/apiWrapper.ts";
 
 const App: React.FC = () => {
   const { switcher, themes } = useThemeSwitcher();

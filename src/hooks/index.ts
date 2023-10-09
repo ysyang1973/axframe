@@ -1,4 +1,3 @@
-export * from "@core/hooks/useDialog";
 export * from "@core/hooks/useI18n";
 export * from "@core/hooks/useIsMounted";
 export * from "@core/hooks/useLink";

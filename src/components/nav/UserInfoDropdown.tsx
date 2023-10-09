@@ -6,6 +6,7 @@ import { SMixinFlexColumn } from "@core/styles/emotion";
 import { IconText, LabelText } from "@core/components/common";
 import { useDialog } from "@core/hooks/useDialog";
 import { useUserStore } from "stores";
+import { errorHandling } from "../../utils";
 
 interface StyleProps {
   asPopover?: boolean;
@@ -16,7 +17,6 @@ interface Props extends StyleProps {
 }
 
 function UserInfoDropdown({ asPopover }: Props) {
-  const { errorDialog } = useDialog();
   const signOut = useUserStore((s) => s.signOut);
   const me = useUserStore((s) => s.me);
   const [signOutSpinning, setSignOutSpinning] = React.useState(false);
@@ -28,11 +28,11 @@ function UserInfoDropdown({ asPopover }: Props) {
     try {
       await signOut();
     } catch (err) {
-      await errorDialog(err);
+      await errorHandling(err);
     } finally {
       setSignOutSpinning(false);
     }
-  }, [errorDialog, setSignOutSpinning, signOut]);
+  }, [setSignOutSpinning, signOut]);
 
   return (
     <UserInfoDropdownContainer asPopover={asPopover}>
