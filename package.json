@@ -12,7 +12,8 @@
     "build:alpha": "tsc && vite build --mode alpha",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "format": "prettier --write --cache .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start:alpha": "vite --mode alpha"
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",

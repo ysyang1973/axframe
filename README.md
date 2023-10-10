@@ -27,10 +27,25 @@ node v18
 
 ## Install
 
+### by Git clone
 ```shell
 git clone [git repo address] myproject
 cd myproject
 
+npm i
+```
+
+### by Download zip or tar.gz
+You can download the latest version of axframe from the [GitHub releases] 
+https://github.com/axisj/axframe/tags
+
+then extract the zip or tar.gz file and add submodule
+
+```shell
+cd myproject
+git init
+rm -rf src/@core
+git submodule add https://github.com/axisj/axframe-core.git src/@core
 npm i
 ```
 
