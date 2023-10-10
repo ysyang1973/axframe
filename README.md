@@ -6,17 +6,18 @@ AXFrame also includes a variety of built-in UI components, such as forms, tables
 
 Applications developed with AXFrame have the following characteristics.
 
-- Fast development (Hot Module Replacement
-- High scalability
 - High maintenance (TypeScript, API management via API interface)
+- High scalability
 - High Performance (React)
 - High security
-- Easy theme management
-- Easy multilingual support
-- Easy permission management
 - Basic support for Page Tab Management System and User Input Status Maintenance System
 - Provides automatic page generation
 - Provides a variety of UI components (Ant Design Optimization)
+- Fast development (Fast Hot Module Replacement)
+- Easy theme management
+- Easy multilingual support
+- Easy permission management
+- Easy API management
 
 ## Features
 - TBD
