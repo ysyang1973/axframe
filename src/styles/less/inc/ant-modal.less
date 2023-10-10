@@ -18,6 +18,20 @@
 
 .ant-modal {
   top: 65px;
+
+  .ant-modal-content {
+    padding: 0;
+  }
+
+  .ant-modal-close-x {
+    line-height: 16px;
+    padding-top: 2.5px;
+  }
+}
+
+// slide-down
+.ant-modal {
+
   .effect-enter() {
     animation-duration: 0.3s;
     animation-fill-mode: both;
@@ -71,7 +85,19 @@
       transform: translateY(-50%);
     }
   }
+}
 
+// slide-up
+.ant-modal {
+
+  .effect-enter() {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+  }
+  .effect-exit() {
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+  }
 
   &.slide-up-enter,
   &.slide-up-appear {
@@ -116,15 +142,5 @@
       opacity: 0;
       transform: translateY(-30%) scale(0.8, 0.8);
     }
-  }
-
-
-  .ant-modal-content {
-    padding: 0;
-  }
-
-  .ant-modal-close-x {
-    line-height: 16px;
-    padding-top: 2.5px;
   }
 }

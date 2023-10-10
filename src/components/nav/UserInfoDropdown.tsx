@@ -4,7 +4,6 @@ import React from "react";
 import { AXFIArrowLogOut } from "@axframe/icon";
 import { SMixinFlexColumn } from "@core/styles/emotion";
 import { IconText, LabelText } from "@core/components/common";
-import { useDialog } from "@core/hooks/useDialog";
 import { useUserStore } from "stores";
 import { errorHandling } from "../../utils";
 

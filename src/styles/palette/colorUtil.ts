@@ -1,49 +1,43 @@
-import * as Color from "color";
+import { TinyColor } from "@ctrl/tinycolor";
 
 function darken(color: string, amt: number = 0.2): string {
-  return Color(color).darken(amt).hex();
+  return new TinyColor(color).darken(amt * 100).toString();
 }
 
 function lighten(color: string, amt: number = 0.2): string {
-  return Color(color).lighten(amt).hex();
+  return new TinyColor(color).lighten(amt * 100).toString();
 }
 
 function saturate(color: string, amt: number = 0.2): string {
-  return Color(color).lighten(amt).hex();
+  return new TinyColor(color).lighten(amt * 100).toString();
 }
 
 function desaturate(color: string, amt: number = 0.2): string {
-  return Color(color).lighten(amt).hex();
+  return new TinyColor(color).lighten(amt * 100).toString();
 }
 
 function grayscale(color: string): string {
-  return Color(color).grayscale().hex();
+  return new TinyColor(color).greyscale().toString();
 }
 
 function whiten(color: string, amt: number = 0.2): string {
-  return Color(color).whiten(amt).hex();
+  return new TinyColor(color).tint(amt * 100).toString();
 }
 
 function blacken(color: string, amt: number = 0.2): string {
-  return Color(color).blacken(amt).hex();
+  return new TinyColor(color).shade(amt * 100).toString();
 }
 
 function invert(color: string): string {
-  return Color(color).negate().hex();
+  return new TinyColor(color).spin(180).toString();
 }
 
 function isDark(color: string): boolean {
-  return Color(color).isDark();
-}
-
-function opaquer(color: string, amt: number = -0.1): string {
-  const _color: any = Color(color).opaquer(amt).rgb();
-  return `rgba(${_color.color.join(", ")}, ${_color.valpha})`;
+  return new TinyColor(color).isDark();
 }
 
 function alpha(color: string, amt: number = 0.2): string {
-  const _color: any = Color(color).alpha(amt).rgb();
-  return `rgba(${_color.color.join(", ")}, ${_color.valpha})`;
+  return new TinyColor(color).setAlpha(amt).toRgbString();
 }
 
-export { darken, lighten, saturate, desaturate, grayscale, whiten, blacken, invert, isDark, opaquer, alpha };
+export { darken, lighten, saturate, desaturate, grayscale, whiten, blacken, invert, isDark, alpha };

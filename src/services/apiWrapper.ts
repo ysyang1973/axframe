@@ -51,7 +51,7 @@ export const apiWrapper = async <P>(method: string, route: string, body?: any, c
   }
 
   let bodyArr: any[] = [];
-  const searchParams = new URLSearchParams(body).toString();
+  let searchParams: string = "";
   switch (method) {
     case "request":
       bodyArr = [config];
@@ -62,6 +62,7 @@ export const apiWrapper = async <P>(method: string, route: string, body?: any, c
       if (body?.pageNumber !== undefined) {
         body.pageNumber = Math.max(body.pageNumber - 1, 0);
       }
+      searchParams = new URLSearchParams(body).toString();
       bodyArr = [route + `${searchParams ? "?" + searchParams : ""}`, config];
       break;
     case "post":

@@ -1,5 +1,4 @@
 import React from "react";
-import { StepBackwardOutlined } from "@ant-design/icons";
 import { AXFIDefaultProgram, AXFISetting, AXFITemplate } from "@axframe/icon";
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -34,3 +33,5 @@ export function MenuIcon({ typeName, ...rest }: Props) {
       return <AXFIDefaultProgram {...{ className }} />;
   }
 }
+
+export default MenuIcon;
