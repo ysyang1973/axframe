@@ -96,6 +96,7 @@ export const apiWrapper = async <P>(method: string, route: string, body?: any, c
           if (_data.error.code === ApiErrorCode.INVALID_TOKEN) {
             await useUserStore.getState().signOut();
           }
+          config.tryTime = tryTime + 1;
           throw new ApiError(_data.error.code, _data.error.message);
         }
 
@@ -107,8 +108,6 @@ export const apiWrapper = async <P>(method: string, route: string, body?: any, c
             token: _data.rs.Token,
           });
         }
-
-        config.tryTime = tryTime + 1;
 
         return await apiWrapper(method, route, body, config);
       }
