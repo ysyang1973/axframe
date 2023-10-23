@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import { ThemeSwitcherProvider } from "react-css-theme-switcher";
+import { ErrorBoundary } from "react-error-boundary";
+import { ErrorFallback } from "./@core/components/ErrorFallback.tsx";
 
 const themes = {
   dark: `/app-dark.css`,
@@ -10,6 +12,8 @@ const themes = {
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <ThemeSwitcherProvider themeMap={themes} defaultTheme='light'>
-    <App />
+    <ErrorBoundary FallbackComponent={ErrorFallback}>
+      <App />
+    </ErrorBoundary>
   </ThemeSwitcherProvider>,
 );

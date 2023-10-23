@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 import { ApiError } from "./ApiError";
 import { ApiErrorCode } from "../@types";
 import { getAppData, setAppData } from "../@core/utils/store";
@@ -40,7 +40,12 @@ export interface ApiRequestConfig extends AxiosRequestConfig {
   ignoreError?: boolean;
 }
 
-export const apiWrapper = async <P>(method: string, route: string, body?: any, config: ApiRequestConfig = {}) => {
+export const apiWrapper = async <P>(
+  method: string,
+  route: string,
+  body?: any,
+  config: ApiRequestConfig = {},
+): Promise<AxiosResponse<P>> => {
   await prepareRequest(config);
 
   // remove undefined | null
