@@ -146,7 +146,7 @@ const NavUserMenuContainer = styled.div<StyleProps>`
     // 0depth - item
     > .ant-menu-item,
     > .ant-menu-submenu {
-      height: 36px;
+      min-height: 36px;
       line-height: 36px;
       font-size: 14px;
       font-weight: 600;
