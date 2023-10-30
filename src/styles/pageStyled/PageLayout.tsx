@@ -43,12 +43,13 @@ const PageLayoutContainer = styled.div<Props>`
 `;
 
 const PageHeader = styled.div`
-  ${SMixinFlexRow("space-between", "center")};
+  ${SMixinFlexRow("space-between", "center", "wrap")};
 
   font-weight: 700;
   color: ${(p) => p.theme.text_heading_color};
   padding: 20px 16px 16px 16px;
   font-size: 20px;
+  gap: 12px;
 `;
 
 const PageBody = styled.div`
