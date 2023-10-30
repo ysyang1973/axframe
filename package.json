@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
-    "@axframe/contextmenu": "^0.3.5",
     "@axframe/datagrid": "^0.6.12",
     "@axframe/icon": "^0.1.15",
     "@ctrl/tinycolor": "^4.0.2",

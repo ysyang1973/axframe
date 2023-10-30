@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
-import { TabGroupMenu, TabGroupMenuAction } from "@core/components/contextMenu";
-import React from "react";
+import * as React from "react";
 import { ReactSortable } from "react-sortablejs";
 import { SMixinFlexRow } from "@core/styles/emotion";
 import { usePageTabStore } from "@core/stores/usePageTabStore";
@@ -9,6 +8,10 @@ import { useLink } from "@core/hooks/useLink";
 import { useLocation } from "react-router-dom";
 import TabItem from "./TabItem";
 import TabItemMore from "./TabItemMore";
+import type { MenuProps } from "antd";
+import { Dropdown } from "antd";
+import { TabGroupMenuAction } from "@core/components/contextMenu";
+import { MenuInfo } from "rc-menu/lib/interface";
 
 interface Props {}
 
@@ -20,9 +23,32 @@ function TabGroup(props: Props) {
   const removeTab = usePageTabStore((s) => s.removeTab);
   const removeTabs = usePageTabStore((s) => s.removeTabs);
 
+  const [contextTabUuid, setContextTabUuid] = React.useState("");
+
   const location = useLocation();
-  const { currentLanguage } = useI18n();
+  const { t, currentLanguage } = useI18n();
   const { linkByTo } = useLink();
+
+  const tabGroupMenu: MenuProps["items"] = React.useMemo(() => {
+    return [
+      {
+        label: t.pageTab.contextMenu.closeTag,
+        key: TabGroupMenuAction.CLOSE_TAB,
+      },
+      {
+        label: t.pageTab.contextMenu.closeOtherTabs,
+        key: TabGroupMenuAction.CLOSE_OTHER_TABS,
+      },
+      {
+        label: t.pageTab.contextMenu.closeTabsToRight,
+        key: TabGroupMenuAction.CLOSE_TABS_RIGHT,
+      },
+      {
+        label: t.pageTab.contextMenu.refresh,
+        key: TabGroupMenuAction.REFRESH,
+      },
+    ];
+  }, [t]);
 
   const tabItemList = React.useMemo(() => {
     return [...pages].map(([k, v]) => ({ id: k, page: v }));
@@ -64,8 +90,29 @@ function TabGroup(props: Props) {
     [getActiveTabPage, linkByTo, location.pathname, pages, removeTabs],
   );
 
+  const onClickContextMenu = React.useCallback(
+    (info: MenuInfo) => {
+      switch (info.key) {
+        case TabGroupMenuAction.CLOSE_TAB:
+          handleRemoveTab(contextTabUuid);
+          break;
+        case TabGroupMenuAction.CLOSE_OTHER_TABS:
+          handleRemoveOtherTabs(contextTabUuid, "OTHERS");
+          break;
+        case TabGroupMenuAction.CLOSE_TABS_RIGHT:
+          handleRemoveOtherTabs(contextTabUuid, "TO_RIGHT");
+          break;
+        case TabGroupMenuAction.REFRESH:
+          window.location.reload();
+          break;
+        default:
+          break;
+      }
+    },
+    [contextTabUuid, handleRemoveOtherTabs, handleRemoveTab],
+  );
+
   const scrollerRef = React.useRef<HTMLDivElement>(null);
-  const tabGroupMenu = React.useRef<TabGroupMenu>(new TabGroupMenu());
 
   const handleWheelScroller = React.useCallback((evt: React.WheelEvent) => {
     if (scrollerRef.current) {
@@ -75,33 +122,10 @@ function TabGroup(props: Props) {
     }
   }, []);
 
-  const handleContextMenu = React.useCallback(
-    (evt: React.MouseEvent<HTMLDivElement>, tabUuid: string) => {
-      evt.preventDefault();
-
-      tabGroupMenu.current.onClick = ({ action }) => {
-        switch (action) {
-          case TabGroupMenuAction.CLOSE_TAB:
-            handleRemoveTab(tabUuid);
-            break;
-          case TabGroupMenuAction.CLOSE_OTHER_TABS:
-            handleRemoveOtherTabs(tabUuid, "OTHERS");
-            break;
-          case TabGroupMenuAction.CLOSE_TABS_RIGHT:
-            handleRemoveOtherTabs(tabUuid, "TO_RIGHT");
-            break;
-          case TabGroupMenuAction.REFRESH:
-            window.location.reload();
-            break;
-          default:
-            break;
-        }
-      };
-
-      tabGroupMenu.current.popupByItem(evt);
-    },
-    [handleRemoveOtherTabs, handleRemoveTab],
-  );
+  const handleContextMenu = React.useCallback((evt: React.MouseEvent<HTMLDivElement>, tabUuid: string) => {
+    evt.preventDefault();
+    setContextTabUuid(tabUuid);
+  }, []);
 
   const handleClickTab = React.useCallback(
     (tabUuid: string, path?: string) => {
@@ -133,38 +157,40 @@ function TabGroup(props: Props) {
   }, [activeTabUuid]);
 
   React.useEffect(() => {
-    tabGroupMenu.current.language = currentLanguage;
+    // tabGroupMenu.current.language = currentLanguage;
   }, [currentLanguage]);
 
   return (
     <TabGroupContainer>
       <TabLine />
       <TabItemsGroup>
-        <TabItemsScroller ref={scrollerRef} onWheel={handleWheelScroller} role={"tab-scroller"}>
-          <ReactSortable
-            animation={300}
-            delayOnTouchOnly
-            delay={30}
-            list={tabItemList}
-            setList={(newState) => {
-              setPages?.(newState.map((tabItem) => [tabItem.id, tabItem.page]));
-            }}
-            onEnd={(evt) => {
-              evt.item.click();
-            }}
-          >
-            {tabItemList.map((tabItem, index) => (
-              <TabItem
-                key={index}
-                tabUuid={tabItem.id}
-                tabInfo={tabItem.page}
-                onContextMenu={handleContextMenu}
-                onClickTab={handleClickTab}
-                onRemoveTab={handleRemoveTab}
-              />
-            ))}
-          </ReactSortable>
-        </TabItemsScroller>
+        <Dropdown trigger={["contextMenu"]} menu={{ items: tabGroupMenu, onClick: onClickContextMenu }}>
+          <TabItemsScroller ref={scrollerRef} onWheel={handleWheelScroller} role={"tab-scroller"}>
+            <ReactSortable
+              animation={300}
+              delayOnTouchOnly
+              delay={30}
+              list={tabItemList}
+              setList={(newState) => {
+                setPages?.(newState.map((tabItem) => [tabItem.id, tabItem.page]));
+              }}
+              onEnd={(evt) => {
+                evt.item.click();
+              }}
+            >
+              {tabItemList.map((tabItem, index) => (
+                <TabItem
+                  key={index}
+                  tabUuid={tabItem.id}
+                  tabInfo={tabItem.page}
+                  onContextMenu={handleContextMenu}
+                  onClickTab={handleClickTab}
+                  onRemoveTab={handleRemoveTab}
+                />
+              ))}
+            </ReactSortable>
+          </TabItemsScroller>
+        </Dropdown>
         <TabItemMore />
       </TabItemsGroup>
     </TabGroupContainer>

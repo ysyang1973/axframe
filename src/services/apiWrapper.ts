@@ -45,7 +45,7 @@ export const apiWrapper = async <P>(
   route: string,
   body?: any,
   config: ApiRequestConfig = {},
-): Promise<AxiosResponse<P>> => {
+): Promise<AxiosResponse<P> | undefined> => {
   await prepareRequest(config);
 
   // remove undefined | null
@@ -100,6 +100,7 @@ export const apiWrapper = async <P>(
           await delay(10);
           if (_data.error.code === ApiErrorCode.INVALID_TOKEN) {
             await useUserStore.getState().signOut();
+            return;
           }
           config.tryTime = tryTime + 1;
           throw new ApiError(_data.error.code, _data.error.message);
