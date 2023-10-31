@@ -12,12 +12,14 @@ export interface UploadImage {
   url: string;
   thumbUrl: string;
 }
+
 interface Props {
   label: string;
   maxCount?: number;
   onChange?: (files: UploadImage[]) => void;
   files?: UploadImage[];
 }
+
 interface UploadedFile {
   fileNm: string; //서울_경기산.jpg",
   saveNm: string; //R46xxKrqO.jpg",
@@ -33,6 +35,7 @@ interface UploadedFile {
   thumbnail: string; ///v1/thumbnail?savePath=/Users/kyle/Work/samsung/upload/2023/0001/thumb/R46xxKrqO.jpg",
   download: string; ///v1/download?filePath=/Users/kyle/Work
 }
+
 const getBase64 = (file: RcFile): Promise<string> =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();

@@ -13,4 +13,5 @@ function AXFIconXMedium(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconXMedium };

@@ -13,4 +13,5 @@ function PeatIconAppArrowDown(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconAppArrowDown };

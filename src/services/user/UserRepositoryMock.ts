@@ -12,8 +12,6 @@ import { setApiHeader } from "../apiWrapper";
 import { setAppData } from "../../@core/utils/store";
 import pkg from "../../../package.json";
 import { v4 as uuidv4 } from "uuid";
-import { ApiError } from "../ApiError.ts";
-import { ApiErrorCode } from "../../@types";
 
 export class UserRepositoryMock implements UserRepositoryInterface {
   async signIn(_params: SignInRequest): Promise<SignInResponse> {

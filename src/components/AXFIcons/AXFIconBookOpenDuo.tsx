@@ -15,4 +15,5 @@ function AXFIconBookOpenDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBookOpenDuo };

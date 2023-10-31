@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconRectTriangleUpDuo(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -11,4 +12,5 @@ function AXFIconRectTriangleUpDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconRectTriangleUpDuo };

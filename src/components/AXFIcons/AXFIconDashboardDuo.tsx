@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconDashboardDuo(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -20,4 +21,5 @@ function AXFIconDashboardDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconDashboardDuo };

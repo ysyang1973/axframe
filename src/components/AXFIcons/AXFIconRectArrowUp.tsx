@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconRectArrowUp(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -10,4 +11,5 @@ function AXFIconRectArrowUp(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconRectArrowUp };

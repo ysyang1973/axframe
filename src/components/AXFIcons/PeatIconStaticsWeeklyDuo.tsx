@@ -16,4 +16,5 @@ function PeatIconStaticsWeeklyDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconStaticsWeeklyDuo };

@@ -11,4 +11,5 @@ function AXFIconUpDownTriangle(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconUpDownTriangle };

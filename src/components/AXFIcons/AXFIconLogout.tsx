@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconLogout(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -16,4 +17,5 @@ function AXFIconLogout(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconLogout };

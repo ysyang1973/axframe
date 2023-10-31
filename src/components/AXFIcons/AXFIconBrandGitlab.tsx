@@ -13,4 +13,5 @@ function AXFIconBrandGitlab(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBrandGitlab };

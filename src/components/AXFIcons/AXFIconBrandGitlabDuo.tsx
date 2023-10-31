@@ -18,4 +18,5 @@ function AXFIconBrandGitlabDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBrandGitlabDuo };

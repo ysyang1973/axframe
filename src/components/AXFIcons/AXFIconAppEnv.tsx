@@ -21,4 +21,5 @@ function AXFIconAppEnv(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconAppEnv };

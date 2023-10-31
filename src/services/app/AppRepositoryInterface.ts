@@ -14,6 +14,7 @@ export interface AppMenu {
   iconTy?: keyof typeof MenuIconType;
   children: AppMenu[];
 }
+
 export interface AppMenuGroup {
   menuGrpCd: string;
   multiLanguage: {
@@ -29,14 +30,17 @@ export interface AppMenuGroup {
 }
 
 export interface GetAppMenuRequest {}
+
 export interface GetAppMenuResponse {
   ds: AppMenuGroup[];
 }
 
 export interface GetProgramAuthorityRequest {}
+
 export interface GetProgramAuthorityResponse {}
 
 export abstract class AppRepositoryInterface {
   abstract getAppMenu(params: GetAppMenuRequest): Promise<GetAppMenuResponse>;
+
   abstract getProgramAuthority(params: GetProgramAuthorityRequest): Promise<GetProgramAuthorityResponse>;
 }

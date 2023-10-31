@@ -13,4 +13,5 @@ function AXFIconXLarge(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconXLarge };

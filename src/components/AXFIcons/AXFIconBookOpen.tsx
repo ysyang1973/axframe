@@ -13,4 +13,5 @@ function AXFIconBookOpen(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBookOpen };

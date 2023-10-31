@@ -18,4 +18,5 @@ function PeatIconStroe(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconStroe };

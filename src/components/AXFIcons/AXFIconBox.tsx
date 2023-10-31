@@ -15,4 +15,5 @@ function AXFIconBox(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBox };

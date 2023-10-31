@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconThreeDots(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -20,4 +21,5 @@ function AXFIconThreeDots(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconThreeDots };

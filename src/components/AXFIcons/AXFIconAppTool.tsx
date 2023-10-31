@@ -17,4 +17,5 @@ function AXFIconAppTool(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconAppTool };

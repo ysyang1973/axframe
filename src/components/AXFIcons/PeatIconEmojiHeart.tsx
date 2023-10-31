@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function PeatIconEmojiHeart(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -24,4 +25,5 @@ function PeatIconEmojiHeart(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconEmojiHeart };

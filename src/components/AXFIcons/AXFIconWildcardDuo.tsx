@@ -18,4 +18,5 @@ function AXFIconWildcardDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconWildcardDuo };

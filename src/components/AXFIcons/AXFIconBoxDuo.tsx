@@ -22,4 +22,5 @@ function AXFIconBoxDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBoxDuo };

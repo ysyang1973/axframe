@@ -29,10 +29,12 @@ export interface DefaultDto {
   __status__?: DtoItemStatus;
   rowId?: string;
 }
+
 export interface Option {
   label?: string;
   value?: string;
 }
+
 export interface FileDto {
   fileKey?: string;
   savePath?: string;

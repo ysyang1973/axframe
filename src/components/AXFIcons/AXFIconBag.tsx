@@ -13,4 +13,5 @@ function AXFIconBag(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBag };

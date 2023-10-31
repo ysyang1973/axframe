@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function PeatIconAppCalendar(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -21,4 +22,5 @@ function PeatIconAppCalendar(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconAppCalendar };

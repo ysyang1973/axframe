@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function PeatIconApprovalLine(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -18,4 +19,5 @@ function PeatIconApprovalLine(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconApprovalLine };

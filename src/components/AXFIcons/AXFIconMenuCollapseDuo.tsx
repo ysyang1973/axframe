@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconMenuCollapseDuo(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -15,4 +16,5 @@ function AXFIconMenuCollapseDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconMenuCollapseDuo };

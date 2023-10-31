@@ -21,4 +21,5 @@ function AXFIconBrandInstagram(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBrandInstagram };

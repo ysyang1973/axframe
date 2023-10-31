@@ -19,4 +19,5 @@ function AXFIconBrandYoutubeDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBrandYoutubeDuo };

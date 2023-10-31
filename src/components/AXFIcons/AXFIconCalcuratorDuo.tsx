@@ -21,4 +21,5 @@ function AXFIconCalcuratorDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconCalcuratorDuo };

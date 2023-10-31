@@ -22,4 +22,5 @@ function AXFIconAppToolDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconAppToolDuo };

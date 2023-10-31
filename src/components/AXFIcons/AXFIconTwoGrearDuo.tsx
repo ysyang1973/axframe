@@ -31,4 +31,5 @@ function AXFIconTwoGrearDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconTwoGrearDuo };

@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconGageCircle(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -12,4 +13,5 @@ function AXFIconGageCircle(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconGageCircle };

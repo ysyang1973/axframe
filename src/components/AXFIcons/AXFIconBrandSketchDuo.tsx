@@ -14,4 +14,5 @@ function AXFIconBrandSketchDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBrandSketchDuo };

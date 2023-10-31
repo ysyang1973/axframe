@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconMegaphone(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -15,4 +16,5 @@ function AXFIconMegaphone(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconMegaphone };

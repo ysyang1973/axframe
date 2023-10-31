@@ -13,4 +13,5 @@ function AXFIconUser(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconUser };

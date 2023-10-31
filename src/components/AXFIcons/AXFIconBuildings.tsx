@@ -21,4 +21,5 @@ function AXFIconBuildings(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBuildings };

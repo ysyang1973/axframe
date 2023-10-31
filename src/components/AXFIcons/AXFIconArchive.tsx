@@ -14,4 +14,5 @@ function AXFIconArchive(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconArchive };

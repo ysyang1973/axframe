@@ -12,4 +12,5 @@ function AXFIconUpDownTriangleDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconUpDownTriangleDuo };

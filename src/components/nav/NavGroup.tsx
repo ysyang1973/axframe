@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import NavUserMenu from "./NavUserMenu";
 import { SMixinFlexColumn } from "@core/styles/emotion";
 import { MenuItem } from "router";
-import NavFooter from "./NavFooter";
 import { useAppStore } from "stores";
 import { User } from "services";
 

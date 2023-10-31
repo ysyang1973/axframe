@@ -13,4 +13,5 @@ function AXFIconWildcard(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconWildcard };

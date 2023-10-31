@@ -19,4 +19,5 @@ function AXFIconUserDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconUserDuo };

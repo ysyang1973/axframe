@@ -20,4 +20,5 @@ function AXFIconCalcurator(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconCalcurator };

@@ -18,4 +18,5 @@ function PeatIconAppArrowLeftDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconAppArrowLeftDuo };

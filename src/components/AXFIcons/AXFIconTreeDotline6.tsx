@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconTreeDotline6(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -15,4 +16,5 @@ function AXFIconTreeDotline6(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconTreeDotline6 };

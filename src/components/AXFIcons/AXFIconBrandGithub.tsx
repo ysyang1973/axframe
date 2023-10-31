@@ -13,4 +13,5 @@ function AXFIconBrandGithub(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBrandGithub };

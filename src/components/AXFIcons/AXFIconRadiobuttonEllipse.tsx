@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconRadiobuttonEllipse(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -14,4 +15,5 @@ function AXFIconRadiobuttonEllipse(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconRadiobuttonEllipse };

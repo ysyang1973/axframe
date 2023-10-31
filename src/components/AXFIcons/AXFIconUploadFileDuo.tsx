@@ -22,4 +22,5 @@ function AXFIconUploadFileDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconUploadFileDuo };

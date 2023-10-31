@@ -24,4 +24,5 @@ function PeatIconStroeDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconStroeDuo };

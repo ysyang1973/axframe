@@ -33,4 +33,5 @@ function AXFIconBrandAxisj(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBrandAxisj };

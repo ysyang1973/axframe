@@ -18,4 +18,5 @@ function AXFIconXMediumDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconXMediumDuo };

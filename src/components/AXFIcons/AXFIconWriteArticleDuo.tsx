@@ -19,4 +19,5 @@ function AXFIconWriteArticleDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconWriteArticleDuo };

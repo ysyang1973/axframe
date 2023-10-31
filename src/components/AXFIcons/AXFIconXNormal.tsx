@@ -13,4 +13,5 @@ function AXFIconXNormal(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconXNormal };

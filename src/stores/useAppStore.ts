@@ -48,7 +48,6 @@ const getAppStoreActions: StoreActions<AppModel & AppActions, AppActions> = (set
     try {
       const data = await AppService.getAppMenu({});
       set({ appMenuGroups: data.ds });
-    } catch (e) {
     } finally {
       set({ appMenuGroupSpinning: false });
     }

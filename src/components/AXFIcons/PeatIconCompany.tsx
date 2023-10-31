@@ -21,4 +21,5 @@ function PeatIconCompany(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconCompany };

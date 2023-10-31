@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconHandleVertical(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -10,4 +11,5 @@ function AXFIconHandleVertical(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconHandleVertical };

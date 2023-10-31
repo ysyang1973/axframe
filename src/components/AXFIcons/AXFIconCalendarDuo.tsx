@@ -14,4 +14,5 @@ function AXFIconCalendarDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconCalendarDuo };

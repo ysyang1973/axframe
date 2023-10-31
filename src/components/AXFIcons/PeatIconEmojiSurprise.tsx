@@ -25,4 +25,5 @@ function PeatIconEmojiSurprise(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconEmojiSurprise };

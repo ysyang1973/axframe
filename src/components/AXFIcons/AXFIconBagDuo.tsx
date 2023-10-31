@@ -18,4 +18,5 @@ function AXFIconBagDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBagDuo };

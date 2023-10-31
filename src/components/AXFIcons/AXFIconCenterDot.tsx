@@ -13,4 +13,5 @@ function AXFIconCenterDot(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconCenterDot };

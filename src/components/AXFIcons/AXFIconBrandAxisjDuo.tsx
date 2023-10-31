@@ -22,4 +22,5 @@ function AXFIconBrandAxisjDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBrandAxisjDuo };

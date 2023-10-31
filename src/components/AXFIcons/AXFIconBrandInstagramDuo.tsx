@@ -26,4 +26,5 @@ function AXFIconBrandInstagramDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconBrandInstagramDuo };

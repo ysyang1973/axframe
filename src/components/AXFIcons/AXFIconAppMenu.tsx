@@ -15,4 +15,5 @@ function AXFIconAppMenu(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconAppMenu };

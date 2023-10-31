@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconSystemUserGroup(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -16,4 +17,5 @@ function AXFIconSystemUserGroup(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconSystemUserGroup };

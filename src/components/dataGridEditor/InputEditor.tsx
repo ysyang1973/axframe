@@ -34,7 +34,7 @@ export function InputEditor<T = Record<string, any>>({
         case "ArrowUp":
           handleSaveEdit(evt.currentTarget.value, "current", "prev");
           break;
-        case "Tab":
+        case "Tab": {
           evt.preventDefault();
           const value = evt.currentTarget.value;
           setTimeout(() => {
@@ -45,6 +45,7 @@ export function InputEditor<T = Record<string, any>>({
             }
           });
           break;
+        }
         case "Enter":
           handleSaveEdit(evt.currentTarget.value);
           break;

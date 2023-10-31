@@ -15,4 +15,5 @@ function AXFIconArchiveDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconArchiveDuo };

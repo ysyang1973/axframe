@@ -18,4 +18,5 @@ function PeatIconStaticsTran(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconStaticsTran };

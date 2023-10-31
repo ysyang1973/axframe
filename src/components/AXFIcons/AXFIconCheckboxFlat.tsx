@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconCheckboxFlat(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -14,4 +15,5 @@ function AXFIconCheckboxFlat(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconCheckboxFlat };

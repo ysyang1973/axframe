@@ -13,6 +13,7 @@ import { errorHandling } from "../../utils";
 interface StyleProps {
   sideMenuOpened?: boolean;
 }
+
 interface Props extends StyleProps {
   me?: User;
   onSignOut?: () => Promise<void>;

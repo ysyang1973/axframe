@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function PeatIconCalc(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -15,4 +16,5 @@ function PeatIconCalc(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconCalc };

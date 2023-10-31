@@ -18,4 +18,5 @@ function AXFIconWriteArticle(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconWriteArticle };

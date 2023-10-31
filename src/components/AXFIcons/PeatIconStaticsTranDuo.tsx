@@ -24,4 +24,5 @@ function PeatIconStaticsTranDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { PeatIconStaticsTranDuo };

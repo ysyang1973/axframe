@@ -4,7 +4,7 @@ import { Menu } from "antd";
 import { MenuProps } from "antd/lib/menu";
 import { useI18n, useLink } from "@core/hooks";
 import React from "react";
-import { SMixinFlexColumn, SMixinScrollerStyle } from "@core/styles/emotion";
+import { SMixinScrollerStyle } from "@core/styles/emotion";
 import { MenuItem, useAppMenu } from "router";
 import { useAppStore, useUserStore } from "stores";
 import { AppMenu, AppMenuGroup } from "services";

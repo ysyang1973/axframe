@@ -1,5 +1,6 @@
 import React from "react";
 import { AXFIconComponent, AXFIconProps } from "./AXFIconComponent";
+
 function AXFIconModeDayDuo(props: AXFIconProps) {
   return (
     <AXFIconComponent {...props}>
@@ -25,4 +26,5 @@ function AXFIconModeDayDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconModeDayDuo };

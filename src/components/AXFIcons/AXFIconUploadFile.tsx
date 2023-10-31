@@ -15,4 +15,5 @@ function AXFIconUploadFile(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconUploadFile };

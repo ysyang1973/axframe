@@ -14,4 +14,5 @@ function AXFIconXLargeThinDuo(props: AXFIconProps) {
     </AXFIconComponent>
   );
 }
+
 export { AXFIconXLargeThinDuo };
