@@ -73,8 +73,7 @@ function AppMenuBar({}: Props) {
 
   return (
     <Container>
-      <AXFIconBrandAxisj style={{ margin: "0 10px" }} fontSize={16} />
-
+      <AXFIconBrandAxisj fontSize={16} />
       <MenuContainer>
         <ConfigProvider
           theme={{
@@ -95,7 +94,8 @@ function AppMenuBar({}: Props) {
 }
 
 const Container = styled.div<StyleProps>`
-  ${SMixinFlexRow("stretch", "center")};
+  ${SMixinFlexRow("stretch", "center", "wrap")};
+  gap: 10px;
 
   flex: 1;
   overflow: hidden;
@@ -106,6 +106,8 @@ const Container = styled.div<StyleProps>`
 
   .ant-menu-horizontal {
     border-bottom: 1px solid transparent;
+    background-color: transparent;
+    font-size: 13px;
   }
 `;
 

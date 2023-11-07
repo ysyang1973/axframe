@@ -50,7 +50,7 @@ function TabItemMore({}: Props) {
         })),
       }}
       trigger={["click"]}
-      align={{ targetOffset: [-5, 0] }}
+      align={{ targetOffset: [16, 8] }}
       open={visible}
       onOpenChange={(visible) => setVisible(visible)}
       overlayClassName={"tab-item-more-dropdown"}
