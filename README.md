@@ -98,7 +98,7 @@ export default programConfig;
 2. Run script in terminal by below
 
 ```shell
-npm run make-program
+npm run make:program
 ```
 
 3. You can see the program files in `pagesDir`

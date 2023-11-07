@@ -28,6 +28,7 @@ export const EN_button = {
   copy: "Copy",
   fileUpload: "File Upload",
   import: "Import",
+  edit: "Edit",
 };
 
 export const KO_button: typeof EN_button = {
@@ -60,4 +61,5 @@ export const KO_button: typeof EN_button = {
   copy: "복사",
   fileUpload: "파일 업로드",
   import: "임포트",
+  edit: "수정",
 };

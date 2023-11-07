@@ -21,6 +21,9 @@ const ExampleListWithFormRow = React.lazy(() => import("@core/pages/LIST_WITH_FO
 const ExampleThreeList = React.lazy(() => import("@core/pages/THREE_LIST/App"));
 const ExampleStats = React.lazy(() => import("@core/pages/STATS/App"));
 
+const SegmentLabel = React.lazy(() => import("pages/study/segment-label/App"));
+const Label = React.lazy(() => import("pages/study/label/App"));
+
 const Home = React.lazy(() => import("pages/home/App"));
 const SignIn = React.lazy(() => import("pages/signIn/App"));
 const Error404 = React.lazy(() => import("pages/error/Error404"));
@@ -66,6 +69,8 @@ function PageRoute() {
         <Route path={ROUTES.EXAMPLES.children.LIST_WITH_FORM_ROW.path} element={<ExampleListWithFormRow />} />
         <Route path={ROUTES.EXAMPLES.children.THREE_LIST.path} element={<ExampleThreeList />} />
         <Route path={ROUTES.EXAMPLES.children.STATS.path} element={<ExampleStats />} />
+        <Route path={ROUTES.STUDY.children.SEGMENT_LABEL.path} element={<SegmentLabel />} />
+        <Route path={ROUTES.STUDY.children.LABEL.path} element={<Label />} />
 
         <Route path={ROUTES.HOME.path} element={<Home />} />
       </Route>

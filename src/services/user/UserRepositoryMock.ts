@@ -51,6 +51,8 @@ export class UserRepositoryMock implements UserRepositoryInterface {
           "EXAMPLE_LIST_WITH_LIST",
           "EXAMPLE_THREE_LIST",
           "EXAMPLE_STATS",
+          "SEGMENT_LABEL",
+          "LABEL",
         ],
         email: "tom@axisj.com",
         compCd: "V100",

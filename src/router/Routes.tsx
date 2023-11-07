@@ -22,6 +22,19 @@ const routes = {
     path: "",
     hideTab: true,
   },
+  STUDY: {
+    path: "study",
+    children: {
+      SEGMENT_LABEL: {
+        path: "segment-label",
+        program_type: PROGRAM_TYPES.SEGMENT_LABEL,
+      },
+      LABEL: {
+        path: "label",
+        program_type: PROGRAM_TYPES.LABEL,
+      }
+    }
+  },
 
   EXAMPLES: {
     path: "examples",

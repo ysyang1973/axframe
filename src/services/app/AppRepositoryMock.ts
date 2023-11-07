@@ -120,6 +120,28 @@ export class AppRepositoryMock extends AppRepositoryInterface {
               progCd: "EXAMPLE_STATS",
               children: [],
             },
+            {
+              multiLanguage: {
+                en: "Segment",
+                ko: "라벨관리",
+              },
+              iconTy: "Default",
+              level: 1,
+              sort: 9,
+              progCd: "SEGMENT_LABEL",
+              children: [],
+            },
+            {
+              multiLanguage: {
+                en: "Label",
+                ko: "라벨",
+              },
+              iconTy: "Default",
+              level: 1,
+              sort: 10,
+              progCd: "LABEL",
+              children: [],
+            },
           ],
           userGroup: ["ROLE_ADMIN"],
         },

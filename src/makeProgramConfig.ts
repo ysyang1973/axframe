@@ -5,12 +5,8 @@ const programConfig: ProgramConfig = {
   templateDir: "./src/@core/pages",
   programs: [
     {
-      name: ["DEMO", "userList"],
+      name: ["study", "segment-label"],
       type: "LIST",
-    },
-    {
-      name: ["DEMO", "userForm"],
-      type: "LIST_WITH_FORM",
     },
   ],
 };
