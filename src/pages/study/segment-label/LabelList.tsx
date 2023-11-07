@@ -1,42 +1,46 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import styled from "@emotion/styled";
-import { Button, Form, Row, Col, Divider } from "antd";
+import { Button, Col, Row } from "antd";
 import { PageLayout } from "styles/pageStyled";
 import { useI18n } from "@core/hooks/useI18n";
+import LabelForm from "./LabelForm.tsx";
+import { SMixinFlexColumn } from "../../../@core/styles/emotion";
+import { css } from "@emotion/react";
+import { isDark } from "../../../styles/palette/colorUtil.ts";
 
-function LabelList({ labels }) {
+function LabelList({ labels, editId }) {
   const { t } = useI18n();
-  const LabelItem = ({ item }) => {
-    return (
-      <Row gutter={[8, 16]}>
-        <Col xs={12} sm={4}>
-          <LabelColorStyle color={item.color}>{item.name}</LabelColorStyle>
-        </Col>
-        <Col xs={12} sm={8}>
-          <div>{item.description}</div>
-        </Col>
-        <Col xs={12} sm={12}>
-          <div>
-            <ButtonGroup compact align='flex-end'>
-              <Button size='small'>{t.button.edit}</Button>
-              <Button size='small'>{t.button.delete}</Button>
-            </ButtonGroup>
-          </div>
-        </Col>
-      </Row>
-    );
-  };
-
-  const LabelItemsDiv = labels.map((label) => (
-    <LabelItemStyle key={label.id}>
-      <LabelItem item={label} key={label.id} />
-    </LabelItemStyle>
-  ));
+  const [editID, setEditID] = React.useState("");
 
   return (
     <div>
       <LabelHeaderStyle>{labels.length} Labels</LabelHeaderStyle>
-      <div>{LabelItemsDiv}</div>
+      <div>
+        {labels.map((label, key) =>
+          editID === label.id ? (
+            <LabelForm label={label} edit={false} />
+          ) : (
+            <LabelItemStyle key={key}>
+              <Row gutter={[8, 16]}>
+                <Col xs={12} sm={4}>
+                  <LabelColorStyle color={label.color}>{label.name}</LabelColorStyle>
+                </Col>
+                <Col xs={12} sm={8}>
+                  <div>{label.description}</div>
+                </Col>
+                <Col xs={12} sm={12}>
+                  <div>
+                    <ButtonGroup compact align='flex-end'>
+                      <Button size='small'>{t.button.edit}</Button>
+                      <Button size='small'>{t.button.delete}</Button>
+                    </ButtonGroup>
+                  </div>
+                </Col>
+              </Row>
+            </LabelItemStyle>
+          ),
+        )}
+      </div>
     </div>
   );
 }
@@ -66,8 +70,23 @@ const LabelColorStyle = styled.div<{
 }>`
   background: ${({ color = "red" }) => color};
   padding: 10px;
-  border-radius: 15px 15px 15px 15px;
-  border: 1px solid rgb(222, 222, 222);
+  border-radius: 20px;
+  ${SMixinFlexColumn("center", "center")};
+
+  font-weight: bold;
+  color: ${(p) => (isDark(p.color ?? "") ? "white" : "black")};
+
+  ${({ color }) => {
+    if (isDark(color ?? "")) {
+      return css`
+        color: white;
+      `;
+    }
+
+    return css`
+      color: black;
+    `;
+  }}
 `;
 
 export default LabelList;
